@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sojourners Missions International - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'smi-blue': '#1e3a8a',
+                        'smi-orange': '#f97316',
+                        'smi-gold': '#fbbf24',
+                        'smi-cream': '#fef3c7',
+                        'smi-dark': '#0f172a',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background-image: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(249, 115, 22, 0.8)), url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+        .cross-pattern {
+            background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M20 0v40M0 20h40" stroke="%23fbbf24" stroke-width="0.5" fill="none" opacity="0.1"/%3E%3C/svg%3E');
+        }
+        .scripture-glow {
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.3);
+        }
+        .nav-glass {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .bible-verse {
+            border-left: 4px solid #f97316;
+            transition: all 0.3s ease;
+        }
+        .bible-verse:hover {
+            border-left-color: #fbbf24;
+            background: rgba(251, 191, 36, 0.05);
+            transform: translateX(5px);
+        }
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+        .btn-shine:hover::after {
+            animation: shine 0.5s ease-in-out;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 overflow-x-hidden">
+
+    <!-- Top Bar -->
+    <div class="bg-smi-blue text-white py-2 px-4 text-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span><i class="fas fa-phone mr-2 text-smi-gold"></i> +234 XXX XXX XXXX</span>
+                <span><i class="fas fa-envelope mr-2 text-smi-gold"></i> info@sojournersmissions.org</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-smi-gold transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-smi-gold transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-smi-gold transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-smi-gold transition"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-glass sticky top-0 z-50 border-b border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 group cursor-pointer">
+                    <img src="C:\\Users\\HomePC\\Pictures\\screenshot\\Screenshot 2026-02-25 142836.png" class="w-12 h-12 border-2 border-smi-gold shadow-lg group-hover:scale-110 transition-transform duration-300" alt="SMI logo">
+                    <div class="flex flex-col">
+                        <span class="font-serif text-xl font-bold text-white italic">Sojourners <span class="text-smi-orange">Missions</span></span>
+                        <span class="text-xs text-smi-gold tracking-widest uppercase">International</span>
+                    </div>
+                </img>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#home" class="px-4 py-2 rounded-full text-white hover:bg-smi-orange transition-all duration-300 font-medium">Home</a>
+                    <a href="#about" class="px-4 py-2 rounded-full text-white hover:bg-smi-orange transition-all duration-300 font-medium">About Us</a>
+                    <a href="#team" class="px-4 py-2 rounded-full text-white hover:bg-smi-orange transition-all duration-300 font-medium">Our Team</a>
+                    <a href="#ministries" class="px-4 py-2 rounded-full text-white hover:bg-smi-orange transition-all duration-300 font-medium">Ministries</a>
+                    <a href="https://www.kingjamesbibleonline.org/" target="_blank" rel="noopener" class="px-4 py-2 rounded-full bg-smi-orange text-white hover:bg-orange-600 transition-all duration-300 font-medium shadow-lg shadow-orange-500/30">
+                        <i class="fas fa-book-open mr-2"></i>Bible
+                    </a>
+                    <a href="#donate" class="px-4 py-2 rounded-full text-white hover:bg-smi-orange transition-all duration-300 font-medium">Donate</a>
+                    <a href="#contact" class="px-4 py-2 rounded-full text-white hover:bg-smi-orange transition-all duration-300 font-medium">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-white hover:text-smi-gold transition">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-smi-dark border-t border-slate-700">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-white hover:bg-smi-orange rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-2 text-white hover:bg-smi-orange rounded-md">About Us</a>
+                <a href="#team" class="block px-3 py-2 text-white hover:bg-smi-orange rounded-md">Our Team</a>
+                <a href="#ministries" class="block px-3 py-2 text-white hover:bg-smi-orange rounded-md">Ministries</a>
+                    <a href="https://www.kingjamesbibleonline.org/" target="_blank" rel="noopener" class="block px-3 py-2 text-smi-gold font-bold bg-slate-800 rounded-md">Bible</a>
+                <a href="#donate" class="block px-3 py-2 text-white hover:bg-smi-orange rounded-md">Donate</a>
+                <a href="#contact" class="block px-3 py-2 text-white hover:bg-smi-orange rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen hero-pattern flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 cross-pattern opacity-30"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-smi-gold/20 rounded-full blur-3xl float-animation"></div>
+        <div class="absolute bottom-20 right-10 w-48 h-48 bg-smi-orange/20 rounded-full blur-3xl float-animation" style="animation-delay: 2s;"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-white space-y-6 animate-fade-in">
+                <div class="inline-block px-4 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-smi-gold text-sm font-semibold tracking-wider uppercase mb-4">
+                    Est. 2002 • Kachia, Nigeria
+                </div>
+                <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight">
+                    Spreading the <span class="gradient-text">Gospel</span> to the Nations
+                </h1>
+                <p class="text-xl text-slate-200 leading-relaxed max-w-lg">
+                    Sojourners Missions International began in 2002 as a follow-up to evangelistic work in Kachia, Southern Kaduna, reaching communities with love, faith, and hope.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <button onclick="scrollToSection('bible')" class="btn-shine px-8 py-4 bg-smi-orange hover:bg-orange-600 text-white rounded-full font-semibold shadow-lg shadow-orange-500/40 transition-all transform hover:scale-105 flex items-center">
+                        <i class="fas fa-book-bible mr-2"></i> Read Bible
+                    </button>
+                    <button onclick="scrollToSection('about')" class="px-8 py-4 bg-transparent border-2 border-white/30 hover:border-smi-gold hover:bg-white/10 text-white rounded-full font-semibold transition-all flex items-center">
+                        <i class="fas fa-play mr-2"></i> Learn More
+                    </button>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/20 mt-8">
+                    <div>
+                        <div class="text-3xl font-bold text-smi-gold">20+</div>
+                        <div class="text-sm text-slate-300">Years of Service</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-smi-gold">50+</div>
+                        <div class="text-sm text-slate-300">Communities</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-smi-gold">10k+</div>
+                        <div class="text-sm text-slate-300">Lives Impacted</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image Collage -->
+            <div class="relative hidden md:block">
+                <div class="relative z-10 grid grid-cols-2 gap-4 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                    <div class="space-y-4 mt-8">
+                        <div class="bg-smi-cream p-2 rounded-2xl shadow-2xl transform hover:-translate-y-2 transition-transform">
+                            <div class="bg-smi-blue/20 h-48 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-church text-6xl text-smi-blue opacity-50"></i>
+                            </div>
+                        </div>
+                        <div class="bg-white p-2 rounded-2xl shadow-2xl transform hover:-translate-y-2 transition-transform">
+                            <div class="bg-smi-orange/20 h-64 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-hands-praying text-6xl text-smi-orange opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-white p-2 rounded-2xl shadow-2xl transform hover:-translate-y-2 transition-transform">
+                            <div class="bg-slate-200 h-64 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-people-group text-6xl text-slate-400 opacity-50"></i>
+                            </div>
+                        </div>
+                        <div class="bg-smi-cream p-2 rounded-2xl shadow-2xl transform hover:-translate-y-2 transition-transform">
+                            <div class="bg-smi-gold/30 h-48 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-heart text-6xl text-smi-orange opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Decorative Circle -->
+                <div class="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border-2 border-smi-gold/30 rounded-full animate-pulse"></div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl opacity-50"></i>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="about" class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-smi-orange/5 rounded-full -mr-32 -mt-32"></div>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-smi-orange/20 rounded-3xl transform rotate-3"></div>
+                    <div class="relative bg-smi-cream p-8 rounded-2xl shadow-xl">
+                        <div class="aspect-square bg-gradient-to-br from-smi-blue to-slate-700 rounded-xl flex items-center justify-center text-white">
+                            <div class="text-center p-8">
+                                <i class="fas fa-cross text-6xl mb-4 text-smi-gold"></i>
+                                <h3 class="font-serif text-2xl font-bold mb-2">Our Mission</h3>
+                                <p class="text-sm opacity-90">To evangelize, disciple, and empower communities through the love of Christ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="inline-block px-4 py-1 rounded-full bg-smi-orange/10 text-smi-orange text-sm font-semibold tracking-wider uppercase">
+                        Welcome to SMI
+                    </div>
+                    <h2 class="font-serif text-4xl font-bold text-smi-dark">
+                        Transforming Lives Through <span class="text-smi-orange">Faith & Action</span>
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        Sojourners Missions International (SMI) began in 2002 as a follow-up to the evangelistic work we started in Kachia (Southern Kaduna in Nigeria) and its environs earlier. We started especially in the Royal Clinic Annex Kachia where we used to hold prayer meetings and reach the patients that came to the clinic.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Today, we have expanded our reach to multiple communities, providing spiritual guidance, educational support, healthcare assistance, and community development programs that reflect the love of Christ.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-smi-blue/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-book-bible text-smi-blue"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-smi-dark">Bible Teaching</h4>
+                                <p class="text-sm text-slate-500">Sound doctrine & discipleship</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-smi-orange/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-hand-holding-heart text-smi-orange"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-smi-dark">Community Care</h4>
+                                <p class="text-sm text-slate-500">Outreach & support</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-smi-gold/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-graduation-cap text-yellow-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-smi-dark">Education</h4>
+                                <p class="text-sm text-slate-500">Schools & training</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-heart-pulse text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-smi-dark">Healthcare</h4>
+                                <p class="text-sm text-slate-500">Medical missions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Bible Section -->
+    <section id="bible" class="py-20 bg-slate-900 relative overflow-hidden">
+        <div class="absolute inset-0 cross-pattern opacity-20"></div>
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-smi-blue via-smi-orange to-smi-gold"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-12">
+                <div class="inline-block p-3 rounded-full bg-smi-gold/20 mb-4">
+                    <i class="fas fa-book-bible text-4xl text-smi-gold"></i>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
+                    The Holy <span class="text-smi-gold">Bible</span>
+                </h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    "Your word is a lamp to my feet and a light to my path." - Psalm 119:105
+                </p>
+            </div>
+
+            <!-- Bible Interface -->
+            <div class="bg-slate-800 rounded-3xl shadow-2xl overflow-hidden border border-slate-700">
+                <!-- Bible Header -->
+                <div class="bg-slate-900 p-6 border-b border-slate-700 flex flex-col md:flex-row gap-4 items-center justify-between">
+                    <div class="flex items-center space-x-4 w-full md:w-auto flex-wrap">
+                        <select id="versionSelect" onchange="switchVersion()" class="bg-slate-700 text-white px-4 py-2 rounded-lg border border-slate-600 focus:border-smi-gold focus:outline-none">
+                            <option value="kjv">King James Version (KJV)</option>
+                            <option value="nkjv">New King James Version (NKJV)</option>
+                            <option value="niv">New International Version (NIV)</option>
+                        </select>
+                        <select id="bookSelect" onchange="loadChapter()" class="bg-slate-700 text-white px-4 py-2 rounded-lg border border-slate-600 focus:border-smi-gold focus:outline-none">
+                            <option value="john">John</option>
+                            <option value="psalms">Psalms</option>
+                            <option value="proverbs">Proverbs</option>
+                            <option value="matthew">Matthew</option>
+                            <option value="romans">Romans</option>
+                            <option value="philippians">Philippians</option>
+                            <option value="isaiah">Isaiah</option>
+                        </select>
+                        <select id="chapterSelect" onchange="displayChapter()" class="bg-slate-700 text-white px-4 py-2 rounded-lg border border-slate-600 focus:border-smi-gold focus:outline-none">
+                            <option value="1">Chapter 1</option>
+                            <option value="2">Chapter 2</option>
+                            <option value="3">Chapter 3</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flex items-center space-x-2 bg-slate-700 rounded-lg p-1">
+                        <button onclick="adjustFontSize(-1)" class="p-2 hover:bg-slate-600 rounded text-white transition"><i class="fas fa-minus"></i></button>
+                        <span class="text-slate-300 px-2">A</span>
+                        <button onclick="adjustFontSize(1)" class="p-2 hover:bg-slate-600 rounded text-white transition"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Bible Content -->
+                <div class="p-8 md:p-12 bg-slate-800 min-h-[500px]">
+                    <div id="bibleContent" class="max-w-3xl mx-auto">
+                        <h3 class="font-serif text-3xl font-bold text-smi-gold text-center mb-8">The Gospel According to John</h3>
+                        <h4 class="text-xl text-smi-orange text-center mb-8 font-semibold">Chapter 1</h4>
+                        
+                        <div class="space-y-4 text-slate-200 leading-relaxed" id="versesContainer">
+                            <p class="bible-verse pl-4 py-2"><span class="text-smi-gold font-bold mr-2">1</span>In the beginning was the Word, and the Word was with God, and the Word was God.</p>
+                            <p class="bible-verse pl-4 py-2"><span class="text-smi-gold font-bold mr-2">2</span>He was in the beginning with God.</p>
+                            <p class="bible-verse pl-4 py-2"><span class="text-smi-gold font-bold mr-2">3</span>All things were made through him, and without him was not any thing made that was made.</p>
+                            <p class="bible-verse pl-4 py-2"><span class="text-smi-gold font-bold mr-2">4</span>In him was life, and the life was the light of men.</p>
+                            <p class="bible-verse pl-4 py-2"><span class="text-smi-gold font-bold mr-2">5</span>The light shines in the darkness, and the darkness has not overcome it.</p>
+                            <p class="bible-verse pl-4 py-2"><span class="text-smi-gold font-bold mr-2">6</span>There was a man sent from God, whose name was John.</p>
+                            <p class="bible-verse pl-4 py-2"><span class="text-smi-gold font-bold mr-2">7</span>He came as a witness, to bear witness about the light, that all might believe through him.</p>
+                            <p class="bible-verse pl-4 py-2"><span class="text-smi-gold font-bold mr-2">8</span>He was not the light, but came to bear witness about the light.</p>
+                            <p class="bible-verse pl-4 py-2"><span class="text-smi-gold font-bold mr-2">9</span>The true light, which gives light to everyone, was coming into the world.</p>
+                            <p class="bible-verse pl-4 py-2"><span class="text-smi-gold font-bold mr-2">10</span>He was in the world, and the world was made through him, yet the world did not know him.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bible Footer -->
+                <div class="bg-slate-900 p-4 border-t border-slate-700 flex justify-between items-center">
+                    <button onclick="previousChapter()" class="px-6 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition flex items-center">
+                        <i class="fas fa-arrow-left mr-2"></i> Previous
+                    </button>
+                    <span id="versionDisplay" class="text-slate-400 text-sm">King James Version (KJV)</span>
+                    <button onclick="nextChapter()" class="px-6 py-2 bg-smi-orange hover:bg-orange-600 text-white rounded-lg transition flex items-center">
+                        Next <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Daily Verse Card -->
+            <div class="mt-8 grid md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-smi-blue to-blue-900 p-6 rounded-2xl text-white scripture-glow">
+                    <i class="fas fa-sun text-smi-gold text-2xl mb-3"></i>
+                    <h4 class="font-bold mb-2">Verse of the Day</h4>
+                    <p class="text-sm italic opacity-90">"For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life."</p>
+                    <p class="text-smi-gold text-sm mt-2 font-semibold">- John 3:16</p>
+                </div>
+                <div class="bg-gradient-to-br from-smi-orange to-orange-800 p-6 rounded-2xl text-white">
+                    <i class="fas fa-dove text-white text-2xl mb-3"></i>
+                    <h4 class="font-bold mb-2">Prayer Focus</h4>
+                    <p class="text-sm opacity-90">Join us in prayer for our missionaries in Southern Kaduna and the communities we serve.</p>
+                    <button class="mt-3 text-xs bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition">Join Prayer Chain</button>
+                </div>
+                <div class="bg-gradient-to-br from-slate-700 to-slate-900 p-6 rounded-2xl text-white border border-slate-600">
+                    <i class="fas fa-download text-smi-gold text-2xl mb-3"></i>
+                    <h4 class="font-bold mb-2">Bible Resources</h4>
+                    <p class="text-sm opacity-90">Download study guides, devotionals, and sermon notes from our ministry.</p>
+                    <button class="mt-3 text-xs bg-smi-gold/20 text-smi-gold hover:bg-smi-gold/30 px-3 py-1 rounded-full transition">Browse Resources</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministries Section -->
+    <section id="ministries" class="py-20 bg-smi-cream">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-smi-orange font-semibold tracking-wider uppercase text-sm">What We Do</span>
+                <h2 class="font-serif text-4xl font-bold text-smi-dark mt-2">Our Ministries</h2>
+                <div class="w-24 h-1 bg-smi-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Ministry Card 1 -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="h-48 bg-smi-blue relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-smi-blue/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-bullhorn text-3xl mb-2"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-smi-dark mb-3 group-hover:text-smi-orange transition">Evangelism & Outreach</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">Taking the Gospel to unreached communities through crusades, door-to-door evangelism, and media ministry.</p>
+                        <a href="#" class="text-smi-orange font-semibold text-sm hover:underline flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ministry Card 2 -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="h-48 bg-smi-orange relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-smi-orange/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-graduation-cap text-3xl mb-2"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-smi-dark mb-3 group-hover:text-smi-orange transition">Education & Training</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">Operating schools and vocational training centers to empower the next generation with knowledge and skills.</p>
+                        <a href="#" class="text-smi-orange font-semibold text-sm hover:underline flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ministry Card 3 -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="h-48 bg-green-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-green-600/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-heart-pulse text-3xl mb-2"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-smi-dark mb-3 group-hover:text-smi-orange transition">Medical Missions</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">Providing free healthcare services, medical supplies, and health education to underserved communities.</p>
+                        <a href="#" class="text-smi-orange font-semibold text-sm hover:underline flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="py-20 bg-slate-900 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-smi-gold via-smi-orange to-smi-blue"></div>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-smi-gold font-semibold tracking-wider uppercase text-sm">Our Purpose</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mt-2">Team & Outreach</h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Meet the dedicated team working to spread the Gospel and serve communities across Nigeria and beyond.</p>
+                <div class="w-24 h-1 bg-smi-orange mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 (Founder) -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 cursor-pointer">
+                    <img src="https://static.wixstatic.com/media/4b06a7_c74147cb6dfff8873424bd7e411ec569.png/v1/fill/w_199,h_240,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/4b06a7_c74147cb6dfff8873424bd7e411ec569.png" alt="Founder" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-smi-blue/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white font-semibold">Our Founder</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&h=400&fit=crop" alt="Community outreach" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-smi-orange/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white font-semibold">Community Outreach</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop" alt="Team member portrait" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-smi-gold/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white font-semibold">Missionary Team</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1552058544-f53b5bdd0775?w=500&h=400&fit=crop" alt="Group meeting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-smi-blue/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white font-semibold">Prayer Meeting</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop" alt="Ministry event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-smi-orange/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white font-semibold">Outreach Event</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64 cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1552058544-f53b5bdd0775?w=500&h=400&fit=crop" alt="Volunteers serving" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-smi-gold/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white font-semibold">Volunteer Service</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Stats -->
+            <div class="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-slate-700">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-smi-gold mb-2">50+</div>
+                    <p class="text-slate-400">Active Team Members</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-smi-orange mb-2">30+</div>
+                    <p class="text-slate-400">Communities Served</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-smi-gold mb-2">1000+</div>
+                    <p class="text-slate-400">Lives Touched</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-smi-orange font-semibold tracking-wider uppercase text-sm">Leadership</span>
+                <h2 class="font-serif text-4xl font-bold text-smi-dark mt-2">Our Team</h2>
+                <div class="w-24 h-1 bg-smi-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Team Member 1 -->
+                <div class="text-center group">
+                    <div class="relative w-48 h-48 mx-auto mb-4">
+                        <div class="absolute inset-0 bg-smi-orange rounded-full transform rotate-6 group-hover:rotate-12 transition-transform"></div>
+                        <div class="absolute inset-0 bg-slate-200 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                            <!-- founder photo -->
+                            <img src="https://static.wixstatic.com/media/4b06a7_c74147cb6dfff8873424bd7e411ec569.png/v1/fill/w_199,h_240,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/4b06a7_c74147cb6dfff8873424bd7e411ec569.png" alt="Founder" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-smi-dark">Dr. Pst. Mrs. Adaeze Rita Folajimi</h3>
+                    <p class="text-smi-orange font-medium text-sm">Founder & President</p>
+                    <div class="flex justify-center space-x-3 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <a href="#" class="text-slate-400 hover:text-smi-blue"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-smi-blue"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="text-center group">
+                    <div class="relative w-48 h-48 mx-auto mb-4">
+                        <div class="absolute inset-0 bg-smi-blue rounded-full transform -rotate-6 group-hover:-rotate-12 transition-transform"></div>
+                        <div class="absolute inset-0 bg-slate-200 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                            <div class="w-full h-full bg-slate-300 flex items-center justify-center">
+                                <i class="fas fa-user text-6xl text-slate-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-smi-dark">[Name]</h3>
+                    <p class="text-smi-orange font-medium text-sm">Director of Operations</p>
+                    <div class="flex justify-center space-x-3 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <a href="#" class="text-slate-400 hover:text-smi-blue"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-smi-blue"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="text-center group">
+                    <div class="relative w-48 h-48 mx-auto mb-4">
+                        <div class="absolute inset-0 bg-smi-gold rounded-full transform rotate-3 group-hover:rotate-6 transition-transform"></div>
+                        <div class="absolute inset-0 bg-slate-200 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                            <div class="w-full h-full bg-slate-300 flex items-center justify-center">
+                                <i class="fas fa-user text-6xl text-slate-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-smi-dark">[Name]</h3>
+                    <p class="text-smi-orange font-medium text-sm">Head of Missions</p>
+                    <div class="flex justify-center space-x-3 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <a href="#" class="text-slate-400 hover:text-smi-blue"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-smi-blue"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="text-center group">
+                    <div class="relative w-48 h-48 mx-auto mb-4">
+                        <div class="absolute inset-0 bg-smi-orange rounded-full transform -rotate-3 group-hover:-rotate-6 transition-transform"></div>
+                        <div class="absolute inset-0 bg-slate-200 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                            <div class="w-full h-full bg-slate-300 flex items-center justify-center">
+                                <i class="fas fa-user text-6xl text-slate-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-smi-dark">[Name]</h3>
+                    <p class="text-smi-orange font-medium text-sm">Administrator</p>
+                    <div class="flex justify-center space-x-3 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <a href="#" class="text-slate-400 hover:text-smi-blue"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-smi-blue"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="py-20 bg-gradient-to-br from-smi-blue to-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 cross-pattern opacity-20"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <i class="fas fa-hand-holding-heart text-6xl text-smi-gold mb-6 animate-pulse"></i>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6">Support Our Mission</h2>
+            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                Your generous donations help us spread the Gospel, educate children, and provide healthcare to communities in need.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition cursor-pointer group">
+                    <div class="text-3xl font-bold text-smi-gold mb-2">$25</div>
+                    <p class="text-sm text-slate-300">Provide school supplies for a child</p>
+                </div>
+                <div class="bg-smi-orange/20 backdrop-blur-sm p-6 rounded-2xl border border-smi-orange/50 hover:bg-smi-orange/30 transition cursor-pointer group transform scale-105">
+                    <div class="text-3xl font-bold text-smi-gold mb-2">$100</div>
+                    <p class="text-sm text-slate-300">Support a missionary for a week</p>
+                    <div class="mt-2 text-xs text-smi-gold">Most Popular</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition cursor-pointer group">
+                    <div class="text-3xl font-bold text-smi-gold mb-2">$500</div>
+                    <p class="text-sm text-slate-300">Fund a medical mission outreach</p>
+                </div>
+            </div>
+
+            <button class="btn-shine px-10 py-4 bg-smi-orange hover:bg-orange-600 text-white rounded-full font-bold text-lg shadow-lg shadow-orange-500/40 transition-all transform hover:scale-105">
+                <i class="fas fa-heart mr-2"></i> Donate Now
+            </button>
+            
+            <p class="mt-6 text-sm text-slate-400">
+                <i class="fas fa-lock mr-2"></i>Secure SSL Encryption • Tax Deductible
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <span class="text-smi-orange font-semibold tracking-wider uppercase text-sm">Get in Touch</span>
+                    <h2 class="font-serif text-4xl font-bold text-smi-dark mt-2 mb-6">Contact Us</h2>
+                    <p class="text-slate-600 mb-8">Have questions about our ministry? Want to partner with us or volunteer? We'd love to hear from you.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-smi-orange/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-location-dot text-smi-orange text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-smi-dark">Address</h4>
+                                <p class="text-slate-600">Kachia, Southern Kaduna<br>Nigeria</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-smi-blue/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-smi-blue text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-smi-dark">Phone</h4>
+                                <p class="text-slate-600">+234 XXX XXX XXXX</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-smi-gold/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-yellow-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-smi-dark">Email</h4>
+                                <p class="text-slate-600">info@sojournersmissions.org</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-smi-cream p-8 rounded-3xl shadow-xl">
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you for your message! We will get back to you soon.');">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="First Name" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-smi-orange focus:outline-none focus:ring-2 focus:ring-smi-orange/20" required>
+                            <input type="text" placeholder="Last Name" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-smi-orange focus:outline-none focus:ring-2 focus:ring-smi-orange/20" required>
+                        </div>
+                        <input type="email" placeholder="Email Address" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-smi-orange focus:outline-none focus:ring-2 focus:ring-smi-orange/20" required>
+                        <input type="text" placeholder="Subject" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-smi-orange focus:outline-none focus:ring-2 focus:ring-smi-orange/20" required>
+                        <textarea rows="4" placeholder="Your Message" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-smi-orange focus:outline-none focus:ring-2 focus:ring-smi-orange/20" required></textarea>
+                        <button type="submit" class="w-full py-4 bg-smi-blue hover:bg-blue-800 text-white rounded-lg font-semibold transition-all transform hover:scale-[1.02] shadow-lg">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-smi-dark text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-smi-blue rounded-full flex items-center justify-center border border-smi-gold">
+                            <span class="font-serif font-bold text-sm">SMI</span>
+                        </div>
+                        <div>
+                            <div class="font-serif font-bold italic">Sojourners Missions</div>
+                            <div class="text-xs text-smi-gold">International</div>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm">Spreading the Gospel and serving communities in Nigeria since 2002.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 text-smi-gold">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#ministries" class="hover:text-white transition">Ministries</a></li>
+                        <li><a href="#bible" class="hover:text-white transition">Bible</a></li>
+                        <li><a href="#donate" class="hover:text-white transition">Donate</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 text-smi-gold">Resources</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-white transition">Sermons</a></li>
+                        <li><a href="#" class="hover:text-white transition">Devotionals</a></li>
+                        <li><a href="#" class="hover:text-white transition">Annual Reports</a></li>
+                        <li><a href="#" class="hover:text-white transition">Prayer Requests</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 text-smi-gold">Newsletter</h4>
+                    <p class="text-slate-400 text-sm mb-4">Subscribe to receive updates from the mission field.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-1 px-4 py-2 rounded-l-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-smi-orange">
+                        <button class="px-4 py-2 bg-smi-orange hover:bg-orange-600 rounded-r-lg transition">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-500 text-sm">&copy; 2026 Sojourners Missions International. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-400 hover:text-smi-gold transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-smi-gold transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-smi-gold transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-smi-gold transition"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- simplified example of loading from a local JSON file -->
+    <script>
+let bibleData = {};
+let currentVersion = 'kjv';
+
+async function initBible() {
+  // Load all three versions
+  try {
+    const kjvRes = await fetch('kjv.json');
+    bibleData['kjv'] = await kjvRes.json();
+  } catch (e) { console.log('KJV not found:', e); }
+  
+  try {
+    const nkjvRes = await fetch('nkjv.json');
+    bibleData['nkjv'] = await nkjvRes.json();
+  } catch (e) { console.log('NKJV not found:', e); }
+  
+  try {
+    const nivRes = await fetch('niv.json');
+    bibleData['niv'] = await nivRes.json();
+  } catch (e) { console.log('NIV not found:', e); }
+  
+  populateBookSelect();
+  loadChapter();
+}
+
+function switchVersion() {
+  currentVersion = document.getElementById('versionSelect').value;
+  const versionNames = {
+    'kjv': 'King James Version (KJV)',
+    'nkjv': 'New King James Version (NKJV)',
+    'niv': 'New International Version (NIV)'
+  };
+  document.getElementById('versionDisplay').textContent = versionNames[currentVersion];
+  loadChapter();
+}
+
+function populateBookSelect() {
+  const sel = document.getElementById('bookSelect');
+  const data = bibleData[currentVersion];
+  if (data && data.books) {
+    sel.innerHTML = data.books.map(b =>
+      `<option value="${b.name.toLowerCase()}">${b.name}</option>`
+    ).join('');
+  }
+}
+
+function loadChapter() {
+  const book = document.getElementById('bookSelect').value;
+  const chap = parseInt(document.getElementById('chapterSelect').value, 10);
+  const data = bibleData[currentVersion];
+  
+  if (!data || !data.books) return;
+  
+  const verses = data.books.find(b => b.name.toLowerCase() === book)
+                 ?.chapters[chap - 1];
+  if (verses) {
+    displayVerses(verses, book, chap);
+  }
+}
+
+function displayVerses(verses, book, chap) {
+  const container = document.getElementById('versesContainer');
+  document.querySelector('#bibleContent h3').textContent =
+    `The Book of ${book.charAt(0).toUpperCase() + book.slice(1)}`;
+  document.querySelector('#bibleContent h4').textContent =
+    `Chapter ${chap}`;
+  container.innerHTML = verses.map((v, i) =>
+    `<p class="bible-verse">` +
+    `<span class="text-smi-gold font-bold mr-2">${i + 1}</span>${v}</p>`
+  ).join('');
+}
+
+function adjustFontSize(delta) {
+  const container = document.getElementById('versesContainer');
+  const current = parseFloat(window.getComputedStyle(container).fontSize);
+  container.style.fontSize = (current + delta * 2) + 'px';
+}
+
+function previousChapter() {
+  const chapterSelect = document.getElementById('chapterSelect');
+  const current = parseInt(chapterSelect.value, 10);
+  if (current > 1) {
+    chapterSelect.value = current - 1;
+    loadChapter();
+  }
+}
+
+function nextChapter() {
+  const chapterSelect = document.getElementById('chapterSelect');
+  const current = parseInt(chapterSelect.value, 10);
+  if (current < 3) {
+    chapterSelect.value = current + 1;
+    loadChapter();
+  }
+}
+
+function displayChapter() {
+  loadChapter();
+}
+
+function scrollToSection(sectionId) {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', initBible);
+</script>
+</body>
+</html>
+
